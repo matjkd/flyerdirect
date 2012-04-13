@@ -1,7 +1,28 @@
-<a  href="<?= base_url() ?>welcome/home/street_promoting"><img width="180px" src="/images/template/flyerdirect/sidebox/girl.png"/></a>
-<br/><br/><br/>
-<a href="<?= base_url() ?>welcome/home/2012"><img width="180px" src="/images/template/flyerdirect/sidebox/london2012.png"/></a>
+<div class="four columns alpha ">
+  <div class="bluebox">
 
-<br/>
-<br/>
+        test
 
+    </div>
+
+</div>
+
+<div class="four columns omega ">
+    <div class="bluebox">
+
+        test
+
+    </div>
+
+    <div class="bluebox">
+
+        test
+
+    </div>
+    
+      <div class="bluebox">
+
+        test
+
+    </div>
+</div>

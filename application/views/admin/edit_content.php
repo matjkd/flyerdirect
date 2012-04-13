@@ -23,6 +23,9 @@ Meta Title<br/>
 <textarea  cols=65 rows=2 name="meta_title"><?=$row->meta_title?></textarea>
 <br/>
 
+Top Bar: 
+<br/><?=form_input('top_bar', $row->top_bar)?><br/>
+
 Extra: 
 <br/><?=form_input('extra', $row->extra)?><br/>
 Sidebox:
