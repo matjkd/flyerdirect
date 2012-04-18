@@ -26,8 +26,12 @@
         <!-- Delete everything in this .container and get started on your own site! -->
         <div id="top_heading">
             <div class="container">
-                <div class="sixteen columns" >
-                    <h2 class="remove-bottom" ><img alt="Leaflet Distribution, Flyer Delivery, FlyerDirect London" src="<?= base_url() ?>images/template/flyerdirect/logo.png" width="188" height="66"/></h2>
+                <div class="ten columns logo" >
+                    <h2 class="remove-bottom" ><img alt="Leaflet Distribution, Flyer Delivery, FlyerDirect London" src="<?= base_url() ?>images/template/flyerdirect/logo.png" width="188" /></h2>
+
+                </div>
+                <div class="six columns" >
+                    <span  class="phonenumber"> <img src="<?= base_url() ?>images/template/flyerdirect/contact.png" /></span>
 
                 </div>
             </div>
@@ -36,14 +40,17 @@
         </div>
         <div class="nav">
             <div class="container">
-                <div class="sixteen columns" id="menutop">
+                <div class="sixteen columns left" id="menutop">
+
                     <?= $this->load->view('global/' . $this->config_theme . '/menu') ?>
 
                 </div>
+
             </div>
         </div>
 
-       <?=$this->load->view('/slideshow/slideshow')?>
+        <?= $this->load->view('/slideshow/slideshow') ?>
+        
         <!--add top section here-->
         <?php if (isset($topsection) && $topsection != NULL) { ?>
 
@@ -55,7 +62,7 @@
         <?php } ?>
 
 
-        <div class="container">
+        <div class="container top_padding">
 
 
 
@@ -65,10 +72,19 @@
 
             <!--   set size of columns. -->
             <?php
-            if (!isset($mainsize) xor $mainsize == '0' xor $mainsize == NULL) {
+            if (isset($mainsize)) {
+                if ($mainsize == '0' xor $mainsize == NULL) {
+                    $mainsize = "twelve";
+                }
+            } else {
                 $mainsize = "twelve";
             }
-            if (!isset($rightsize) xor $rightsize == '0' xor $rightsize == NULL) {
+
+            if (isset($rightsize)) {
+                if ($rightsize == '0' xor $rightsize == NULL) {
+                    $rightsize = "four";
+                }
+            } else {
                 $rightsize = "four";
             }
             ?>
@@ -90,13 +106,33 @@
             </div>
 
         </div><!-- container -->
+        <div id="basebarfiller">&nbsp; </div>
+        <div id="basebar">
+
+            <div class="container">
+
+                <div class="six columns" style="position:relative; z-index:502;">
+                    <script src="http://www.freeindex.co.uk/widgets/awards.asp?BID=371510&type=1" type="text/javascript"></script>
+                    <div style="text-align:center;width:326px;font-size:11px;font-family:arial;">Awarded by the FreeIndex 
+                        <a style="font-family:arial;font-size:11px;" href="http://www.freeindex.co.uk/categories/business_services/advertising/leaflet_distribution/">Leaflet Distributors</a> directory</div>
+                </div>
+                <div class="ten columns" id="companylogos" style="z-index:0;">
+                    <?= $this->load->view('global/flyer/links') ?>
+                </div>
+
+            </div>
+        </div>
+
         <div class="sixteen columns" id="footerblock">
             <div class="container">
                 <div class="sixteen columns">
-                   
+
                     <?= $this->load->view('global/flyer/seo_menu') ?>
                 </div>
 
+                <div class="sixteen columns">
+                    <?= $this->load->view('global/flyer2/footer_menu') ?>
+                </div>
 
 
 

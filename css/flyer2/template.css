@@ -11,7 +11,7 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 body {
-
+min-width:1024px;
     background:#ffffff;
 }
 
@@ -19,6 +19,10 @@ body {
 
 root { 
     display: block;
+}
+
+h2 {
+    color:#be1200;
 }
 
 .container {
@@ -46,16 +50,16 @@ root {
 
 .big_menu {
     width:100%;
-    display:block;
-    position: relative;
-background:#005cbb url('background/slideshowback.jpg') repeat-x;
-
-    height:194px;
-    margin-left:0px;
-    padding-top:50px;
-    padding-bottom:0px;
     
-       -moz-box-shadow: 0px 0px 12px #000000;
+    position: relative;
+    background:#005cbb url('background/slideshowback.jpg') repeat-x;
+
+  
+    margin-left:0px;
+    padding-top:20px;
+    padding-bottom:0px;
+
+    -moz-box-shadow: 0px 0px 12px #000000;
     -webkit-box-shadow: 0px 0px 12px #000000;
     box-shadow: 0px 0px 12px #000000;
 
@@ -70,6 +74,12 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     box-shadow: 3px 3px 12px #000000;
 
 }
+#headertext img {
+
+
+    color:#fff;
+
+}
 #headerimage {
     -moz-box-shadow: 3px 3px 12px #000000;
     -webkit-box-shadow: 3px 3px 12px #000000;
@@ -80,34 +90,44 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     background-color: #0061c4;
     color:#fff;
     opacity:0.9;
-    height:80px;
+    height:110px;
     margin-bottom:10px;
     margin-top:0px;
     position:relative;
 }
 
+.dark {
+    background-color: #003f80;
+}
+
 #bluebox_content {
     padding:10px;
     margin-bottom:10px;
-    
-    
+
+
 }
 
 .blue_logo {
     display:block;
     float:left;
     width:35px;
+    height:45px;
 }
 .blue_text {
     position:relative;
-    width:150px;
+
     display:block;
-    float:left;
-    padding-left:10px;
+
+    padding-left:5px;
 }
 .blue_text h4 {
     color:#fff;
     line-height:23px;
+    height:45px;
+
+}
+.blue_text a {
+    text-decoration: none;
 }
 
 .clickhere {
@@ -122,12 +142,7 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     color:#ffffff;
 }
 
-#headertext img {
 
-    
-    color:#fff;
-    
-}
 .big_menu h1 {
     text-align: center;
     display:block;
@@ -158,25 +173,24 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     display:block;
     position: relative;
     color:#ffffff;
-    background: url('background/headerback.jpg') repeat-x;
+  
     opacity:0.9;
-    height:70px;
+    
     margin-left:0px;
     padding-top:10px;
     padding-bottom:10px;
 
 
-    z-index:2000;
 
 }
 
 .nav {
     display:block;
-    position: absolute;
+    position: relative;
 
     background-color:#b00e00;
-     border-top: solid 1px #ffffff;
-     border-bottom: solid 1px #ffffff;
+    border-top: solid 1px #ffffff;
+    border-bottom: solid 1px #ffffff;
     width:100%;
     height:33px;
     z-index:1500;
@@ -197,12 +211,38 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
 
 }
 
+
+
 .sub {
     padding-top:0px;
 }
 #topbar {
     background:#61b3ff;
     padding-top:10px;
+    padding-bottom:10px;
+}
+
+#topbar h2 {
+    color:#003266;
+}
+
+#basebar {
+    position:relative;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+#basebarfiller {
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.2);
+    height: 240px;
+    width:100%;
+    z-index:50;
+}
+#dropdownMenu {
+    padding-top:6px;
 }
 
 #menutop {
@@ -216,7 +256,7 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     font-size: 12px;
 
     padding-left: 0px;
-   
+
     line-height:31px;;
 
 
@@ -225,9 +265,9 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     position:relative;
 }
 #menutop ul {
-
+    float:left;
     margin-right:auto;
-    margin-left:auto;
+    margin-left:20px;
 }
 #menutop li {
     display:inline;
@@ -244,7 +284,9 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
 
 }
 
-
+.top_padding {
+    padding-top:20px;
+}
 
 
 .feature_box {
@@ -263,7 +305,7 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
 }
 .features {
 
-   
+
     margin-bottom:8px;
 
 
@@ -278,8 +320,12 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     margin-left:0px;
     padding-top:10px;
     padding-bottom:10px;
+    z-index:501;
 }
 #footerblock h3{
+    color: #007eff;
+}
+#footerblock h4{
     color: #007eff;
 }
 #footerblock a {
@@ -320,7 +366,7 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
     color:#ffffff;
 }
 .costoptions h4 {
-     color:#ffffff;
+    color:#ffffff;
 }
 
 .price {
@@ -343,12 +389,12 @@ background:#005cbb url('background/slideshowback.jpg') repeat-x;
 }
 
 #seo_links ul {
-    width: 960px;
+
     margin-left:0px;
 }
 #seo_links ul li {
     float:left;
-    width:240px;
+    width:230px;
     list-style: none;
 }
 br
@@ -358,6 +404,34 @@ br
 }
 #seo_links ul li a{
     display:block;
-    width:240px;
+    width:230px;
     text-decoration: none;
+}
+
+.footermenu {
+    clear:both;
+    float:left; 
+    padding-top:20px;
+    position:relative; 
+    padding-left:0px;
+
+    font-size: 1.0em;
+    line-height: 1.6em;
+}
+.footermenu ul {
+
+    margin-left: 0px;
+}
+.footermenu li {
+    display:inline;
+    padding-left: 0px;
+    padding-right:5px;
+
+}
+
+.footermenu a {
+    text-decoration:none;
+    color: #aaa;
+    border-right:1px #292929;
+
 }

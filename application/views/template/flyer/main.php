@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="grid_24">
-                    <?= $this->load->view('global/flyer/footer_menu') ?>
+                    <?= $this->load->view('global/flyer2/footer_menu') ?>
                 </div>
 
             </div>

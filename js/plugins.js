@@ -1,4 +1,120 @@
 
+/**
+ * --------------------------------------------------------------------
+ * jQuery-Plugin "pngFix"
+ * Version: 1.2, 09.03.2009
+ * by Andreas Eberhard, andreas.eberhard@gmail.com
+ *                      http://jquery.andreaseberhard.de/
+ *
+ * Copyright (c) 2007 Andreas Eberhard
+ * Licensed under GPL (http://www.opensource.org/licenses/gpl-license.php)
+ *
+ * Changelog:
+ *    09.03.2009 Version 1.2
+ *    - Update for jQuery 1.3.x, removed @ from selectors
+ *    11.09.2007 Version 1.1
+ *    - removed noConflict
+ *    - added png-support for input type=image
+ *    - 01.08.2007 CSS background-image support extension added by Scott Jehl, scott@filamentgroup.com, http://www.filamentgroup.com
+ *    31.05.2007 initial Version 1.0
+ * --------------------------------------------------------------------
+ * @example $(function(){$(document).pngFix();});
+ * @desc Fixes all PNG's in the document on document.ready
+ *
+ * jQuery(function(){jQuery(document).pngFix();});
+ * @desc Fixes all PNG's in the document on document.ready when using noConflict
+ *
+ * @example $(function(){$('div.examples').pngFix();});
+ * @desc Fixes all PNG's within div with class examples
+ *
+ * @example $(function(){$('div.examples').pngFix( { blankgif:'ext.gif' } );});
+ * @desc Fixes all PNG's within div with class examples, provides blank gif for input with png
+ * --------------------------------------------------------------------
+ */
+
+(function($) {
+
+    jQuery.fn.pngFix = function(settings) {
+
+        // Settings
+        settings = jQuery.extend({
+            blankgif: 'blank.gif'
+        }, settings);
+
+        var ie55 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 5.5") != -1);
+        var ie6 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 6.0") != -1);
+
+        if (jQuery.browser.msie && (ie55 || ie6)) {
+
+            //fix images with png-source
+            jQuery(this).find("img[src$=.png]").each(function() {
+
+                jQuery(this).attr('width',jQuery(this).width());
+                jQuery(this).attr('height',jQuery(this).height());
+
+                var prevStyle = '';
+                var strNewHTML = '';
+                var imgId = (jQuery(this).attr('id')) ? 'id="' + jQuery(this).attr('id') + '" ' : '';
+                var imgClass = (jQuery(this).attr('class')) ? 'class="' + jQuery(this).attr('class') + '" ' : '';
+                var imgTitle = (jQuery(this).attr('title')) ? 'title="' + jQuery(this).attr('title') + '" ' : '';
+                var imgAlt = (jQuery(this).attr('alt')) ? 'alt="' + jQuery(this).attr('alt') + '" ' : '';
+                var imgAlign = (jQuery(this).attr('align')) ? 'float:' + jQuery(this).attr('align') + ';' : '';
+                var imgHand = (jQuery(this).parent().attr('href')) ? 'cursor:hand;' : '';
+                if (this.style.border) {
+                    prevStyle += 'border:'+this.style.border+';';
+                    this.style.border = '';
+                }
+                if (this.style.padding) {
+                    prevStyle += 'padding:'+this.style.padding+';';
+                    this.style.padding = '';
+                }
+                if (this.style.margin) {
+                    prevStyle += 'margin:'+this.style.margin+';';
+                    this.style.margin = '';
+                }
+                var imgStyle = (this.style.cssText);
+
+                strNewHTML += '<span '+imgId+imgClass+imgTitle+imgAlt;
+                strNewHTML += 'style="position:relative;white-space:pre-line;display:inline-block;background:transparent;'+imgAlign+imgHand;
+                strNewHTML += 'width:' + jQuery(this).width() + 'px;' + 'height:' + jQuery(this).height() + 'px;';
+                strNewHTML += 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader' + '(src=\'' + jQuery(this).attr('src') + '\', sizingMethod=\'scale\');';
+                strNewHTML += imgStyle+'"></span>';
+                if (prevStyle != ''){
+                    strNewHTML = '<span style="position:relative;display:inline-block;'+prevStyle+imgHand+'width:' + jQuery(this).width() + 'px;' + 'height:' + jQuery(this).height() + 'px;'+'">' + strNewHTML + '</span>';
+                }
+
+                jQuery(this).hide();
+                jQuery(this).after(strNewHTML);
+
+            });
+
+            // fix css background pngs
+            jQuery(this).find("*").each(function(){
+                var bgIMG = jQuery(this).css('background-image');
+                if(bgIMG.indexOf(".png")!=-1){
+                    var iebg = bgIMG.split('url("')[1].split('")')[0];
+                    jQuery(this).css('background-image', 'none');
+                    jQuery(this).get(0).runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + iebg + "',sizingMethod='scale')";
+                }
+            });
+		
+            //fix input with png-source
+            jQuery(this).find("input[src$=.png]").each(function() {
+                var bgIMG = jQuery(this).attr('src');
+                jQuery(this).get(0).runtimeStyle.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader' + '(src=\'' + bgIMG + '\', sizingMethod=\'scale\');';
+                jQuery(this).attr('src', settings.blankgif)
+            });
+	
+        }
+	
+        return jQuery;
+
+    };
+
+
+
+
+})(jQuery);
 /*!
  * jQuery Cycle Plugin (with Transition Definitions)
  * Examples and documentation at: http://jquery.malsup.com/cycle/
@@ -1602,106 +1718,134 @@
 
 })(jQuery);
 
+/*
+ * jQuery Backstretch
+ * Version 1.2.5
+ * http://srobbin.com/jquery-plugins/jquery-backstretch/
+ *
+ * Add a dynamically-resized background image to the page
+ *
+ * Copyright (c) 2011 Scott Robbin (srobbin.com)
+ * Dual licensed under the MIT and GPL licenses.
+*/
 
-// ----------------------------------------------------------------------------
-// Pagination Plugin - A jQuery Plugin to paginate content
-// v 1.0 Beta
-// Dual licensed under the MIT and GPL licenses.
-// ----------------------------------------------------------------------------
-// Copyright (C) 2010 Rohit Singh Sengar
-// http://rohitsengar.cueblocks.net/
-// ----------------------------------------------------------------------------
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-// ----------------------------------------------------------------------------
+(function($) {
 
-//------------ initializing all the values needed in paginator. -----------------
-
-//--- Variables for internal use ----
-
-var pageElement = Array();
-
-var paginatorId = '';
-
-var currentPage = 1; // current page, default 1
-
-var allItems = 0; // no. of repeating items in the container where paginator is applied
-
-var lastPage = 1; // last page, default 1
-
-//--- Attributes that can be changed according to use ---
-
-var startPage = 1; // start page
-
-var itemsPerPage = 5; // no. of items you want to show on one page
-
-var firstPageSymbol = '<<'; // to indicate First Page
-
-var previousPageSymbol = '<'; // to indicate Previous Page
-
-var nextPageSymbol = '>'; // to indicate Next Page
-
-var lastPageSymbol = '>>'; // to indicate Last Page
-
-var separator = ' | '; // To separate paginator's items
-
-var paginatorPosition = 'bottom'; // where you want the paginator to be. Accepted values are 'top','bottom','both'
-
-var paginatorStyle = 1; // To define which style of paginator you need.
-// 1 - for << | < | 1 | 2 | 3 | > | >>
-// 2 - for << | < | 1/8 | > | >>
-// 3 - for < | 1 | 2 | 3 | >
-// 4 - for < | >
-    
-var enablePageOfOption = false; // it shows on which are you currently, i.e. Page 3 of 6 Page(s), if turned true
-    
-var enableGoToPage = false; // shows a drop down of all pages for go/jump to any page user want to go, if turned true. Useful incase there are large no. of pages
-    
-var textGoToPage = 'Go to'; // text for above option. You can change it to 'Jump to Page' or anything you like. The above option needs to turned on for this.
-    
-var enableSelectNoItems = false; // if you want to change items per page on the fly.
-    
-var textSelectNoItems = 'Items Per Page'; // text for above option. You can change it to 'Change No. of tag/page' or anything you like. The above option needs to turned on for this.
-
-var paginatorValues = Array(5,10,15,20,25,30); // list of values for above option (enableSelectNoItems).
-
-var anchorLink = 'javascript:void(0);'; // if you want to change href of the paginator anchor text (links for page) to '#' or to something else. As # is append on the address bar upon clicking I used javascript:void(); which is clean.
-    
-var showIfSinglePage = true; // set it tp false if you don't want to show paginator incase there is only one page, true if show paginator even if there is just one page.
-
-
-//-----------functions starts----------------------------------------------------
-eval(function(p,a,c,k,e,r){
-    e=function(c){
-        return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))
-        };
+    $.backstretch = function(src, options, callback) {
+        var defaultSettings = {
+            centeredX: true,         // Should we center the image on the X axis?
+            centeredY: true,         // Should we center the image on the Y axis?
+            speed: 0                 // fadeIn speed for background after image loads (e.g. "fast" or 500)
+        },
+        container = $("#backstretch"),
+        settings = container.data("settings") || defaultSettings, // If this has been called once before, use the old settings as the default
+        existingSettings = container.data('settings'),
+        rootElement = ("onorientationchange" in window) ? $(document) : $(window), // hack to acccount for iOS position:fixed shortcomings
+        imgRatio, bgImg, bgWidth, bgHeight, bgOffset, bgCSS;
+                
+        // Extend the settings with those the user has provided
+        if(options && typeof options == "object") $.extend(settings, options);
         
-    if(!''.replace(/^/,String)){
-        while(c--)r[e(c)]=k[c]||e(c);
-        k=[function(e){
-            return r[e]
-            }];
-        e=function(){
-            return'\\w+'
-            };
+        // Just in case the user passed in a function without options
+        if(options && typeof options == "function") callback = options;
+    
+        // Initialize
+        $(document).ready(_init);
+  
+        // For chaining
+        return this;
+    
+        function _init() {
+            // Prepend image, wrapped in a DIV, with some positioning and zIndex voodoo
+            if(src) {
+                var img;
+                
+                // If this is the first time that backstretch is being called
+                if(container.length == 0) {
+                    container = $("<div />").attr("id", "backstretch")
+                                            .css({left: 0, top: 0, position: "fixed", overflow: "hidden", zIndex: -999999, margin: 0, padding: 0, height: "100%", width: "100%"});
+                } else {
+                    // Prepare to delete any old images
+                    container.find("img").addClass("deleteable");
+                }
+                
+                img = $("<img />").css({position: "absolute", display: "none", margin: 0, padding: 0, border: "none", zIndex: -999999})
+                                  .bind("load", function(e) {                                          
+                                      var self = $(this),
+                                          imgWidth, imgHeight;
+                                          
+                                      self.css({width: "auto", height: "auto"});
+                                      imgWidth = this.width || $(e.target).width();
+                                      imgHeight = this.height || $(e.target).height();
+                                      imgRatio = imgWidth / imgHeight;
+
+                                      _adjustBG(function() {
+                                          self.fadeIn(settings.speed, function(){
+                                              // Remove the old images, if necessary.
+                                              container.find('.deleteable').remove();
+                                              // Callback
+                                              if(typeof callback == "function") callback();
+                                          });
+                                      });
+                                      
+                                  })
+                                  .appendTo(container);
+                 
+//                // Append the container to the body, if it's not already there
+//                if($("body #backstretch").length == 0) {
+//                    $("body").append(container);
+//                }
+//                
+                // Attach the settings
+                container.data("settings", settings);
+                    
+                img.attr("src", src); // Hack for IE img onload event
+                // Adjust the background size when the window is resized or orientation has changed (iOS)
+                $(window).resize(_adjustBG);
+            }
+        }
             
-        c=1
-        };
-    while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);
-    return p
-    }('1c.1d.1e({1f:A(){j=M;R(1g){y\'1h\':{j.S(\'<m 7="u"></m>\');z}y\'1i\':{j.N(\'<m 7="u"></m>\');z}y\'1j\':{j.S(\'<m 7="u"></m>\');j.N(\'<m 7="u"></m>\');z}T:{j.N(\'<m 7="u"></m>\')}}O()},1k:A(){$(\'.u\').1l();j.B().P()}});A O(){9(n<1)n=5;J=j.B().U;9(J%n==0)q=V(J/n);v q=V(J/n)+1;9((F<1)||(F>q))F=1;9(!1m){9(q>1)r(F,1)}v r(F,1)}A r(a,b){9(a<0){9(a==-1)a=w-1;v a=w+1}w=a;G=(w-1)*n;9(!b){j.1n("W",A(){Q();j.B().X();j.B().Y(G,n+G).P();j.1o("W")})}v{Q();j.B().X();j.B().Y(G,n+G).P()}}A Q(){$(".u").Z("");t a=\'\';t b=\'\';t c=\'\';t d=\'\';t e=\' 8 \'+w+\' 10 \'+q+\' 8(s) \';t f=\' \'+1p+\' <K 11="r(M.C);" >\';t g=\' \'+1q+\' <K 11="n=1r(M.C);O();" >\';12(t i=0;i<D.U;i++){9(n==D[i])g+=\'<x C="\'+D[i]+\'" L="L">\'+D[i]+\'</x>\';v g+=\'<x C="\'+D[i]+\'">\'+D[i]+\'</x>\'}g+=\'</K>\';9(w==1){6=\'<a k="\'+l+\'" 7="o" h="13 8">\'+14+\'</a>\'+p;a=b=6;6=\'<a k="\'+l+\'" 7="o" h="15 8">\'+16+\'</a>\'+p;a+=6;b+=6;c+=6;d+=6}v{6=\'<a k="\'+l+\'" 7="H" I="r(1);" h="13 8">\'+14+\'</a>\'+p;a=b=6;6=\'<a k="\'+l+\'" 7="H" I="r(-1);" h="15 8">\'+16+\'</a>\'+p;a+=6;b+=6;c+=6;d+=6}12(t i=1;i<=q;i++){9(i==w){a+=\'<a k="\'+l+\'" 7="o" h="8 \'+i+\'">\'+i+\'</a>\'+p;b+=\'<a k="\'+l+\'" 7="o" h="8 \'+i+\'">\'+i+\'/\'+q+\'</a>\'+p;c+=\'<a k="\'+l+\'" 7="o" h="8 \'+i+\'">\'+i+\'</a>\'+p;f+=\'<x C="\'+i+\'" L="L">\'+i+\'</x>\'}v{6=\'<a k="\'+l+\'" 7="H" I="r(\'+i+\');" h="8 \'+i+\'">\'+i+\'</a>\'+p;a+=6;c+=6;f+=\'<x C="\'+i+\'">\'+i+\'</x>\'}}f+=\'</K>\';9(w==q){6=\'<a k="\'+l+\'" 7="o" h="17 8">\'+18+\'</a>\';a+=6;b+=6;c+=6;d+=6;6=p+\'<a k="\'+l+\'" 7="o" h="19 8">\'+1a+\'</a>\';a+=6;b+=6}v{6=\'<a k="\'+l+\'" 7="H" I="r(-2);" h="17 8">\'+18+\'</a>\';a+=6;b+=6;c+=6;d+=6;6=p+\'<a k="\'+l+\'" 7="H" I="r(\'+q+\');" h="19 8">\'+1a+\'</a>\';a+=6;b+=6}R(1s){y 1:6=a;z;y 2:6=b;z;y 3:6=c;z;y 4:6=d;z;T:6=a}9(1t)6+=\'<E 7="o" h="8 1u">\'+e+\'</E>\';9(1v)6+=\'<E 7="o" h="1b 8">\'+f+\'</E>\';9(1w)6+=\'<E 7="o" h="1b 1x. 10 1y 1z 1A">\'+g+\'</E>\';$(".u").Z(6)}',62,99,'||||||style|class|Page|if||||||||title||paginatorId|href|anchorLink|div|itemsPerPage|inactive|separator|lastPage|appendContent||var|paginator|else|currentPage|option|case|break|function|children|value|paginatorValues|span|startPage|till|active|onclick|allItems|select|selected|this|after|initPaginator|show|createPaginator|switch|before|default|length|parseInt|medium|hide|slice|html|of|onchange|for|First|firstPageSymbol|Previous|previousPageSymbol|Next|nextPageSymbol|Last|lastPageSymbol|Select|jQuery|fn|extend|pagination|paginatorPosition|top|bottom|both|depagination|remove|showIfSinglePage|fadeOut|fadeIn|textGoToPage|textSelectNoItems|Number|paginatorStyle|enablePageOfOption|Information|enableGoToPage|enableSelectNoItems|no|items|per|page'.split('|'),0,{}))
+        function _adjustBG(fn) {
+            try {
+                bgCSS = {left: 0, top: 0}
+                bgWidth = rootElement.width();
+                bgHeight = bgWidth / imgRatio;
+                
+                // Make adjustments based on image ratio
+                // Note: Offset code provided by Peter Baker (http://ptrbkr.com/). Thanks, Peter!
+                if(bgHeight >= rootElement.height()) {
+                    bgOffset = (bgHeight - rootElement.height()) /2;
+                    if(settings.centeredY) $.extend(bgCSS, {top: "-" + bgOffset + "px"});
+                } else {
+                    bgHeight = rootElement.height();
+                    bgWidth = bgHeight * imgRatio;
+                    bgOffset = (bgWidth - rootElement.width()) / 2;
+                    if(settings.centeredX) $.extend(bgCSS, {left: "-" + bgOffset + "px"});
+                }
+
+                $("#backstretch, #backstretch img:not(.deleteable)").width( bgWidth ).height( bgHeight )
+                                                   .filter("img").css(bgCSS);
+            } catch(err) {
+                // IE7 seems to trigger _adjustBG before the image is loaded.
+                // This try/catch block is a hack to let it fail gracefully.
+            }
+      
+            // Executed the passed in function, if necessary
+            if (typeof fn == "function") fn();
+        }
+    };
+  
+})(jQuery);
+
+
+/**
+ * jQuery.ScrollTo - Easy element scrolling using jQuery.
+ * Copyright (c) 2007-2009 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+ * Dual licensed under MIT and GPL.
+ * Date: 5/25/2009
+ * @author Ariel Flesler
+ * @version 1.4.2
+ *
+ * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
+ */
+;(function(d){var k=d.scrollTo=function(a,i,e){d(window).scrollTo(a,i,e)};k.defaults={axis:'xy',duration:parseFloat(d.fn.jquery)>=1.3?0:1};k.window=function(a){return d(window)._scrollable()};d.fn._scrollable=function(){return this.map(function(){var a=this,i=!a.nodeName||d.inArray(a.nodeName.toLowerCase(),['iframe','#document','html','body'])!=-1;if(!i)return a;var e=(a.contentWindow||a).document||a.ownerDocument||a;return d.browser.safari||e.compatMode=='BackCompat'?e.body:e.documentElement})};d.fn.scrollTo=function(n,j,b){if(typeof j=='object'){b=j;j=0}if(typeof b=='function')b={onAfter:b};if(n=='max')n=9e9;b=d.extend({},k.defaults,b);j=j||b.speed||b.duration;b.queue=b.queue&&b.axis.length>1;if(b.queue)j/=2;b.offset=p(b.offset);b.over=p(b.over);return this._scrollable().each(function(){var q=this,r=d(q),f=n,s,g={},u=r.is('html,body');switch(typeof f){case'number':case'string':if(/^([+-]=)?\d+(\.\d+)?(px|%)?$/.test(f)){f=p(f);break}f=d(f,this);case'object':if(f.is||f.style)s=(f=d(f)).offset()}d.each(b.axis.split(''),function(a,i){var e=i=='x'?'Left':'Top',h=e.toLowerCase(),c='scroll'+e,l=q[c],m=k.max(q,i);if(s){g[c]=s[h]+(u?0:l-r.offset()[h]);if(b.margin){g[c]-=parseInt(f.css('margin'+e))||0;g[c]-=parseInt(f.css('border'+e+'Width'))||0}g[c]+=b.offset[h]||0;if(b.over[h])g[c]+=f[i=='x'?'width':'height']()*b.over[h]}else{var o=f[h];g[c]=o.slice&&o.slice(-1)=='%'?parseFloat(o)/100*m:o}if(/^\d+$/.test(g[c]))g[c]=g[c]<=0?0:Math.min(g[c],m);if(!a&&b.queue){if(l!=g[c])t(b.onAfterFirst);delete g[c]}});t(b.onAfter);function t(a){r.animate(g,j,b.easing,a&&function(){a.call(this,n,b)})}}).end()};k.max=function(a,i){var e=i=='x'?'Width':'Height',h='scroll'+e;if(!d(a).is('html,body'))return a[h]-d(a)[e.toLowerCase()]();var c='client'+e,l=a.ownerDocument.documentElement,m=a.ownerDocument.body;return Math.max(l[h],m[h])-Math.min(l[c],m[c])};function p(a){return typeof a=='object'?a:{top:a,left:a}}})(jQuery);

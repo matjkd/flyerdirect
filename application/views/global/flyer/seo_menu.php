@@ -1,4 +1,4 @@
-<strong>Services</strong><br/>
+<h4>Services</h4><br/>
 <div id="seo_links">
     <ul>
  <?php if(isset($seo_links)) { ?>

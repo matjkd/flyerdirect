@@ -29,10 +29,12 @@
 /* Nested Column Classes */
 .column.alpha, .columns.alpha               { margin-left: 0; }
 .column.omega, .columns.omega               { margin-right: 0; }
-
+.big_menu {   height:194px; }
 #headertext { height:175px;}
+  #headertext img { width:580px;  }
+   #headerimage img { width:580px;  }
 .service {width:668px;}
-.feature_box {width:220px;}
+.feature_box {height:175px; width:340px;}
 
 /* Base Grid */
 .container .one.column,
@@ -73,6 +75,18 @@
 .container .offset-by-fourteen              { padding-left: 840px; }
 .container .offset-by-fifteen               { padding-left: 900px; }
 
+.phonenumber img{width:240px; float:right;}
+.logo img {width:188px; }
+#top_heading {height: 70px;   background: url('background/headerback.jpg') repeat-x;}
+
+#freequote { width:210px; height:90px; }
+#freequote img {width:190px; height: 65px; }
+#companylogos { display:block; }
+
+#dropdownMenu {
+    display:none;
+}
+#maintopMenu { display:block;}
 
 
 /* #Tablet (Portrait)
@@ -89,7 +103,16 @@
     .alpha.omega                                { margin-left: 0; margin-right: 0; }
 
     #headerimage {display:none;}
+    #headertext img { width:460px;  }
+    #freequote {  width:168px; height:90px; }
+    #freequote img {width:155px; height: 65px; }
+    #companylogos { display:none; }
+    #dropdownMenu {
+        display:none;
+    }
+    #maintopMenu { display:block;}
     .service {width:528px;}
+    .big_menu {   height:194px; }
     .feature_box {width:172px;}
     .container .one.column,
     .container .one.columns                     { width: 28px; }
@@ -137,13 +160,28 @@
 /* Note: Design for a width of 320px */
 
 @media only screen and (max-width: 767px) {
-    #headertext { height:200px;}
-    #headerimage {display:none;}
+    #headertext { display:none;}
+  
+    #headerimage{ display:none;}
     .service {width:280px;}
     .container { width: 300px; }
     .container .columns,
     .container .column { margin: 0; }
+    .big_menu {   height:44px; }
+    .phonenumber img{width:140px; float:left;}
 
+    #freequote { clear:both; width:300px; height:90px; }
+    #freequote img {width:190px; height: 65px; }
+
+    #top_heading {height: 130px; background:#19467a;}
+    #companylogos { display:none; }
+    #dropdownMenu {
+        display:block;
+    }
+       #dropdownMenu select {
+        width:150px;
+    }
+    #maintopMenu { display:none;}
     .container .one.column,
     .container .one.columns,
     .container .two.columns,
@@ -195,7 +233,14 @@
     .container .column { margin: 0; }
     .service {width:400px;}
     #headertext { height:155px;}
-    #headerimage {display:none;}
+    #companylogos { display:none; }
+    .big_menu {   height:0px; }
+    #headertext img { width:420px;  }
+    #headerimage{ display:none;}
+    #dropdownMenu {
+        display:block;
+    }
+    #maintopMenu { display:none;}
     .container .one.column,
     .container .one.columns,
     .container .two.columns,
