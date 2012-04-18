@@ -50,7 +50,7 @@
         </div>
 
         <?= $this->load->view('/slideshow/slideshow') ?>
-        
+
         <!--add top section here-->
         <?php if (isset($topsection) && $topsection != NULL) { ?>
 
@@ -130,12 +130,17 @@
                     <?= $this->load->view('global/flyer/seo_menu') ?>
                 </div>
 
-                <div class="sixteen columns">
+                <div class="thirteen columns">
                     <?= $this->load->view('global/flyer2/footer_menu') ?>
                 </div>
+                <div class="three columns">
+                    <?= $this->load->view('global/flyer/social_icons') ?>
 
-
-
+                </div>
+                
+               <div class="sixteen columns footermenu">   
+                <?=$this->load->view('global/flyer/menu')?> 
+               </div>
             </div>
 
 

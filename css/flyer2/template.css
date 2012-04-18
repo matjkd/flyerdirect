@@ -435,3 +435,8 @@ br
     border-right:1px #292929;
 
 }
+
+.socialicons {
+    padding-top:20px;
+    float:right; position:relative; padding-right:10px;
+}
