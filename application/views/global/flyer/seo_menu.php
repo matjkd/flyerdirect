@@ -1,4 +1,4 @@
-<h4>Services</h4><br/>
+<h4>Leaflet Distribution Services</h4><br/>
 <div id="seo_links">
     <ul>
  <?php if(isset($seo_links)) { ?>

@@ -27,9 +27,10 @@ if (isset($title)) {
     ?>
 
 
-    <?php $body = str_replace("Loughton Seedbed Centre", "<strong>Loughton Seedbed Centre</strong>", "$body"); ?>
-
-
+<?php  $body = str_replace("FlyerDirect", "<strong>FlyerDirect</strong>", "$body");?>
+<?php  $body = str_replace("Flyer Direct", "<strong>FlyerDirect</strong>", "$body");?>
+<?php  $body = str_replace("leaflet distribution", "<strong>leaflet distribution</strong>", "$body");?>
+<?php  $body = str_replace("Leaflet distribution", "<strong>Leaflet distribution</strong>", "$body");?>
 
     <?= $body ?>
 
