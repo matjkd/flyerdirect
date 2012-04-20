@@ -8,7 +8,7 @@
                 <img src="<?= base_url() ?>images/icons/icons/map.png"/>
             </div>
             <div class="blue_text">
-                <a href="<?= base_url() ?>welcome/home/street_promoting"> <h4>Street Promoting</h4></a>
+                <a href="<?= base_url() ?>welcome/home/street_promotions"> <h4>Street Promoting</h4></a>
             </div>
             <div style="clear:both;">
                 Utilise our street promoting team
