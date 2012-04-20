@@ -54,7 +54,7 @@
         <!--add top section here-->
         <?php if (isset($topsection) && $topsection != NULL) { ?>
 
-            <div id="topbar">
+            <div id="topbar" style="display:none;">
                 <div class="container">
                     <?= $this->load->view("topbar/" . $topsection) ?>
                 </div>

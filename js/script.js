@@ -50,7 +50,8 @@ $(document).ready(function() {
         fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
     });
     
-    $('.big_menu').css("display", "block");
+  $('.big_menu').slideDown('fast');
+    $('#topbar').slideDown('slow');
 });
        
 
