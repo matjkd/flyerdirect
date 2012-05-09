@@ -1,0 +1,173 @@
+/* 
+    Document   : map
+    Created on : 30-Mar-2012, 11:15:47
+    Author     : mat
+    Description:
+        layout for  map of seedbed centre   
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+#mainmap {
+    position:relative;
+    width:650px;
+    height:535px;
+  
+}
+
+.eblock {
+    position:absolute;
+    width:58px;
+    height:69px;
+    
+    background:url('map/eblock.png');
+    opacity:0.7;
+    text-align: center;
+
+}
+
+
+.dblock {
+    position:absolute;
+    width:38px;
+    height:42px;
+    
+    background:url('map/dblock.png');
+    opacity:0.7;
+    text-align: center;
+
+}
+
+.dblockLarge {
+    position:absolute;
+    width:38px;
+    height:42px;
+    
+    background:url('map/dblockLarge.png');
+    opacity:0.7;
+    text-align: center;
+
+}
+
+
+.bblock {
+    position:absolute;
+    width:28px;
+    height:30px;
+    
+    background:url('map/bblock.png');
+    opacity:0.7;
+    text-align: center;
+
+}
+
+.bblockLarge {
+    position:absolute;
+    width:37px;
+    height:39px;
+    
+    background:url('map/bblockLarge.png');
+    opacity:0.7;
+    text-align: center;
+
+}
+.ablock, .cblock {
+    position:absolute;
+    width:69px;
+    height:74px;
+    
+    background:url('map/ablock.png');
+    opacity:0.7;
+    text-align: center;
+
+}
+
+
+#e1 {    top:36px;    left:255px; }
+#e2 {    top:51px;    left:278px; }
+#e3 {    top:66px;    left:301px; }
+#e4 {    top:81px;    left:324px; }
+#e5 {    top:96px;    left:347px; }
+#e6 {    top:111px;    left:370px; }
+#e7 {    top:126px;    left:393px; }
+#e8 {    top:141px;    left:416px; }
+#e9 {    top:156px;    left:439px; }
+#e10 {    top:171px;    left:462px; }
+#e11 {    top:186px;    left:485px; }
+#e12 {    top:201px;    left:508px; }
+
+
+
+#d1 {    top:258px;    left:344px; }
+
+#d3 {    top:270px;    left:358px; }
+#d4 {    top:282px;    left:372px; }
+#d5 {    top:294px;    left:386px; }
+#d6 {    top:306px;    left:400px; }
+#d7 {    top:318px;    left:414px; }
+#d8 {    top:330px;    left:428px; }
+
+#d2 {    top:297px;    left:313px; }
+#d9 {    top:304px;    left:331px; }
+#d10 {    top:316px;    left:345px; }
+#d11 {    top:328px;    left:359px; }
+#d12 {    top:340px;    left:373px; }
+#d13 {    top:352px;    left:387px; }
+#d14 {    top:364px;    left:401px; }
+
+#b1 {    top:162px;    left:212px; }
+#b2 {    top:192px;    left:186px; }
+#b3 {    top:204px;    left:200px; }
+#b4 {    top:216px;    left:214px; }
+#b5 {    top:228px;    left:228px; }
+#b6 {    top:240px;    left:242px; }
+
+#b7 {    top:175px;    left:218px; }
+#b8 {    top:187px;    left:232px; }
+#b9 {    top:199px;    left:246px; }
+#b10 {    top:211px;    left:260px; }
+
+
+#a1 {    top:269px;    left:86px; }
+#a2 {    top:292px;    left:114px; }
+#a3 {    top:315px;    left:142px; }
+#a4 {    top:338px;    left:170px; }
+
+
+#c1 {    top:379px;    left:216px; }
+#c2 {    top:402px;    left:244px; }
+#c3 {    top:425px;    left:272px; }
+/* #Tablet (Portrait)
+================================================== */
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+
+}
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+

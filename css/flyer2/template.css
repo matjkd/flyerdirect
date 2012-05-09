@@ -1,0 +1,442 @@
+/* 
+    Document   : template
+    Created on : 07-Mar-2012, 14:51:17
+    Author     : mat
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+body {
+min-width:1024px;
+    background:#ffffff;
+}
+
+
+
+root { 
+    display: block;
+}
+
+h2 {
+    color:#be1200;
+}
+
+.container {
+
+}
+
+.mainheading {
+    margin-top:8px;
+    background:#1f313f;
+    opacity:0.9;
+    margin-bottom:8px;
+
+}
+.mainheading h2, .mainheading h3,  .mainheading h4{
+    padding-left:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:#fff;
+    margin-bottom:0px;
+}
+.internal {
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.big_menu {
+    width:100%;
+    
+    position: relative;
+    background:#005cbb url('background/slideshowback.jpg') repeat-x;
+
+  
+    margin-left:0px;
+    padding-top:20px;
+    padding-bottom:0px;
+
+    -moz-box-shadow: 0px 0px 12px #000000;
+    -webkit-box-shadow: 0px 0px 12px #000000;
+    box-shadow: 0px 0px 12px #000000;
+
+}
+#headertext {
+
+    background:#121c24;
+    color:#fff;
+    opacity:0.9;
+    -moz-box-shadow: 3px 3px 12px #000000;
+    -webkit-box-shadow: 3px 3px 12px #000000;
+    box-shadow: 3px 3px 12px #000000;
+
+}
+#headertext img {
+
+
+    color:#fff;
+
+}
+#headerimage {
+    -moz-box-shadow: 3px 3px 12px #000000;
+    -webkit-box-shadow: 3px 3px 12px #000000;
+    box-shadow: 3px 3px 12px #000000;
+}
+
+.bluebox {
+    background-color: #0061c4;
+    color:#fff;
+    opacity:0.9;
+    height:110px;
+    margin-bottom:10px;
+    margin-top:0px;
+    position:relative;
+}
+
+.dark {
+    background-color: #003f80;
+}
+
+#bluebox_content {
+    padding:10px;
+    margin-bottom:10px;
+
+
+}
+
+.blue_logo {
+    display:block;
+    float:left;
+    width:35px;
+    height:45px;
+}
+.blue_text {
+    position:relative;
+
+    display:block;
+
+    padding-left:5px;
+}
+.blue_text h4 {
+    color:#fff;
+    line-height:23px;
+    height:45px;
+
+}
+.blue_text a {
+    text-decoration: none;
+}
+
+.clickhere {
+
+    display:none;
+    position:absolute;
+    bottom:0px;
+    padding-left:10px;
+}
+.clickhere a {
+    text-decoration: none;
+    color:#ffffff;
+}
+
+
+.big_menu h1 {
+    text-align: center;
+    display:block;
+    position: relative;
+    color:#62b8c0;
+}
+.big_menu a{
+    text-decoration: none;
+    color:#62b8c0;
+}
+#big_heading {
+    width:100%;
+    display:block;
+    position: relative;
+    background-color: #141414;
+    height:100%;
+    margin-left:0px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+#big_heading h2 {
+    font-size:30px;
+    color:#1f5c6c;
+}
+
+#top_heading {
+    width:100%;
+    display:block;
+    position: relative;
+    color:#ffffff;
+  
+    opacity:0.9;
+    
+    margin-left:0px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+
+
+}
+
+.nav {
+    display:block;
+    position: relative;
+
+    background-color:#b00e00;
+    border-top: solid 1px #ffffff;
+    border-bottom: solid 1px #ffffff;
+    width:100%;
+    height:33px;
+    z-index:1000;
+    -moz-box-shadow: 0px 0px 12px #000000;
+    -webkit-box-shadow: 0px 0px 12px #000000;
+    box-shadow: 0px 0px 12px #000000;
+}
+.sticky {
+    position:fixed;
+    top:0;
+
+}
+
+.sticky2 {
+    position:absolute;
+
+    right:0px;
+
+}
+
+
+
+.sub {
+    padding-top:0px;
+}
+#topbar {
+    background:#61b3ff;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+#topbar h2 {
+    color:#003266;
+}
+
+#basebar {
+    position:relative;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+#basebarfiller {
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.2);
+    height: 240px;
+    width:100%;
+    z-index:50;
+}
+#dropdownMenu {
+    padding-top:6px;
+}
+
+#menutop {
+
+    width:100%;
+    height:31px;
+    text-align: left;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12px;
+
+    padding-left: 0px;
+
+    line-height:31px;;
+
+
+
+    display:block;
+    position:relative;
+}
+#menutop ul {
+    float:left;
+    margin-right:auto;
+    margin-left:20px;
+}
+#menutop li {
+    display:inline;
+    padding-right:14px;
+}
+
+#menutop a {
+    text-decoration:none;
+    color: #ffffff;
+}
+#top_heading h2 {
+    color:#ffffff;
+    font-weight: normal;
+
+}
+
+.top_padding {
+    padding-top:20px;
+}
+
+
+.feature_box {
+    float:left;
+
+    color:#fff;
+    height:100px;
+    margin-bottom:8px;
+    margin-top:8px;
+    background-color: #5687b5;
+
+}
+.feature_box a, .feature_box h4 {
+    text-decoration: none;
+    color:#fff;
+}
+.features {
+
+
+    margin-bottom:8px;
+
+
+}
+#footerblock {
+    width:100%;
+    display:block;
+    position: relative;
+    color:#ffffff;
+    background-color: #1f313f;
+    height:100%;
+    margin-left:0px;
+    padding-top:10px;
+    padding-bottom:10px;
+    z-index:501;
+}
+#footerblock h3{
+    color: #007eff;
+}
+#footerblock h4{
+    color: #007eff;
+}
+#footerblock a {
+    color:#007eff;
+}
+
+.services {
+    background-color: #007eff;
+    text-align: center;
+    height:40px;
+    margin-bottom:10px;
+    padding:2px;
+    color:#ffffff;
+}
+.services_box a {
+    color:#fff;
+    text-decoration: none;
+}
+.service {
+    clear:both;
+
+    padding:10px;
+    color:#fff;
+    background-color: #5687b5;
+    display: block;
+}
+.service a {
+    color:#fff;
+    text-decoration: none;
+}
+
+.costoptions {
+    background-color: #007eff;
+    position:relative;
+    height:160px;
+    margin-bottom:10px;
+    margin-top:10px;
+    color:#ffffff;
+}
+.costoptions h4 {
+    color:#ffffff;
+}
+
+.price {
+    height:35px;
+    background-color: #005cbb;
+    position :absolute;
+    bottom:0px;
+
+}
+
+#seo_links {
+    clear:both;
+    float:left; 
+    padding-top:0px;
+    position:relative; 
+    padding-left:0px;
+
+    font-size: 1.0em;
+    line-height: 1.3em;
+}
+
+#seo_links ul {
+
+    margin-left:0px;
+}
+#seo_links ul li {
+    float:left;
+    width:230px;
+    list-style: none;
+}
+br
+{
+
+    clear:left;
+}
+#seo_links ul li a{
+    display:block;
+    width:230px;
+    text-decoration: none;
+}
+
+.footermenu {
+    clear:both;
+    float:left; 
+    padding-top:20px;
+    position:relative; 
+    padding-left:0px;
+
+    font-size: 1.0em;
+    line-height: 1.6em;
+}
+.footermenu ul {
+
+    margin-left: 0px;
+}
+.footermenu li {
+    display:inline;
+    padding-left: 0px;
+    padding-right:5px;
+
+}
+
+.footermenu a {
+    text-decoration:none;
+    color: #aaa;
+    border-right:1px #292929;
+
+}
+
+.socialicons {
+    padding-top:20px;
+    float:right; position:relative; padding-right:10px;
+}

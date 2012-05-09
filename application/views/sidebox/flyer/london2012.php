@@ -1,7 +1,60 @@
-<a  href="<?= base_url() ?>welcome/home/street_promoting"><img width="180px" src="/images/template/flyerdirect/sidebox/girl.png"/></a>
-<br/><br/><br/>
-<a href="<?= base_url() ?>welcome/home/2012"><img width="180px" src="/images/template/flyerdirect/sidebox/london2012.png"/></a>
+<div class="four columns alpha ">
 
-<br/>
-<br/>
+    <img src="<?= base_url() ?>images/template/flyerdirect/sidebox/girl2.png" height="235px"/>
+    <div class="bluebox">
 
+        test
+
+    </div>
+
+</div>
+
+<div class="four columns omega ">
+    <div class="bluebox dark">
+
+        <div id="bluebox_content">
+            <div class="blue_logo">
+                <img src="<?= base_url() ?>images/icons/icons/chart.png"/>
+            </div>
+            <div class="blue_text">
+                <h4>Supervised Delivery</h4>
+            </div>
+            <div style="clear:both;">
+                something something something dark side..
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bluebox dark">
+
+        <div id="bluebox_content">
+            <div class="blue_logo">
+                <img src="<?= base_url() ?>images/icons/icons/chart.png"/>
+            </div>
+            <div class="blue_text">
+                <h4>Supervised Delivery</h4>
+            </div>
+            <div style="clear:both;">
+                something something something dark side..
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bluebox dark">
+
+        <div id="bluebox_content">
+            <div class="blue_logo">
+                <img src="<?= base_url() ?>images/icons/icons/chart.png"/>
+            </div>
+            <div class="blue_text">
+                <h4>Supervised Delivery</h4>
+            </div>
+            <div style="clear:both;">
+                something something something dark side..
+            </div>
+        </div>
+
+    </div>
+</div>

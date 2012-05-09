@@ -35,7 +35,7 @@
                 <div style="width:960px; margin:0 auto;">
                  
                        <div style="float: left;border: 0px solid #c3c3c3; width:203px; background: url(/images/backgrounds/redbutton.png) no-repeat;margin-left: 10px; text-align: center;">
-                        <a target="_blank" href="http://mytrackpanel.com/trackit247/">Tracking</a>
+                        <a target="_blank" href="http://mytrackpanel.com/trackit247/">Tracking.</a>
                     </div>
                     
                     
@@ -59,6 +59,7 @@
                 <div class="clear"></div>
 
                 <div id="textcontainer">
+                    <?=$mainsize?>
                     <?php
                     if (isset($sidebox) && $sidebox != NULL) {
                         $mainsize = "grid_14";

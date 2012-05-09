@@ -5,6 +5,7 @@
                   <li><?=anchor('/about', 'about us')?></li>
                   <li><?=anchor('/social', 'charity')?></li>
                     <li><?=anchor('/jobs', 'jobs')?></li>
+                      <li><?=anchor('/links', 'links')?></li>
                   <li><?=anchor('/contact', 'contact')?></li>
                   
             
