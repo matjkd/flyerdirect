@@ -36,11 +36,7 @@
                  
                        <div style="float: left;border: 0px solid #c3c3c3; width:203px; background: url(/images/backgrounds/redbutton.png) no-repeat;margin-left: 10px; text-align: center;">
                         <a target="_blank" href="http://mytrackpanel.com/trackit247/">Tracking.</a>
-<<<<<<< HEAD
-                    </div>
-=======
                     </div>alpha
->>>>>>> 912c98de22e9b0f15c9bda565989db4481496307
                     
                     
                   
@@ -63,11 +59,7 @@
                 <div class="clear"></div>
 
                 <div id="textcontainer">
-<<<<<<< HEAD
-                    <?=$mainsize?>
-=======
                   
->>>>>>> 912c98de22e9b0f15c9bda565989db4481496307
                     <?php
                     if (isset($sidebox) && $sidebox != NULL) {
                         $mainsize = "grid_14";
