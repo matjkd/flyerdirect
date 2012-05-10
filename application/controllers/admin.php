@@ -338,6 +338,17 @@ class Admin extends MY_Controller {
         $this->load->vars($data);
         $this->load->view('template/main');
     }
+    
+    function add_news_content() {
+    	$data['slideshowtoggle'] = "off";
+    	$data['main_content'] = "admin/add_content";
+    	$data['seo_links'] = $this->content_model->get_seo_links();
+    	$data['captcha'] = $this->captcha_model->initiate_captcha();
+    	$data['pages'] = $this->content_model->get_all_content();
+    	$data['category'] = "news";
+    	$this->load->vars($data);
+    	$this->load->view('template/main');
+    }
 
     function is_logged_in() {
         $is_logged_in = $this->session->userdata('is_logged_in');
