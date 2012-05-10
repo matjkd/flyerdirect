@@ -31,8 +31,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>' . "\n";
         <item>
 
           <title><?php echo xml_convert($entry['title']); ?></title>
-          <link><?php echo site_url('welcome/' . $entry['menu']) ?></link>
-          <guid><?php echo site_url('welcome/' . $entry['menu']) ?></guid>
+          <link><?php echo site_url('welcome/home/' . $entry['menu']) ?></link>
+          <guid><?php echo site_url('welcome/home/' . $entry['menu']) ?></guid>
 
           <description><![CDATA[
       <?= str_replace('/img/post_resources/', base_url() . 'img/post_resources/', $entry['content']); ?>
