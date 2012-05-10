@@ -66,7 +66,7 @@ class Admin extends MY_Controller {
     }
 
     function edit_content() {
-        $this->form_validation->set_rules('menu', 'menu', 'trim|required');
+        $this->form_validation->set_rules('menu', 'menu', 'trim');
         if ($this->form_validation->run() == FALSE) { // validation hasn'\t been passed
             echo "validation error";
         } else { // passed validation proceed to post success logic
@@ -168,7 +168,7 @@ class Admin extends MY_Controller {
     function submit_content() {
         $this->form_validation->set_rules('title', 'Title', 'trim|max_length[255]');
         $this->form_validation->set_rules('content', 'Content', 'trim');
-        $this->form_validation->set_rules('menu', 'menu', 'trim|required');
+        $this->form_validation->set_rules('menu', 'menu', 'trim');
         $this->form_validation->set_rules('category', 'Page Type', 'trim|max_length[11]');
         $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 

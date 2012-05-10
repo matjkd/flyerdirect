@@ -1,6 +1,7 @@
 
 <ul>
 	<li><?= anchor('/', 'home') ?></li>
+	<li><?= anchor('/news', 'news') ?></li>
 	<li><?= anchor('/services', 'services') ?></li>
 	<li><?= anchor('/about', 'about us') ?></li>
 	<li><?= anchor('/social', 'charity') ?></li>

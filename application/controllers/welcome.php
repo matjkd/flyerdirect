@@ -55,9 +55,18 @@ class Welcome extends MY_Controller {
             $data['slideshow'] = $row->slideshow;
             $data['mainsize'] = $row->mainsize;
             $data['rightsize'] = $row->rightsize;
+            $data['date_added'] = $row->date_added;
 
 
         endforeach;
+        
+        //format the date
+        $datestring = "%D %d%S of %M %Y";
+        $time = $data['date_added'];
+        
+       $data['date_added']  = mdate($datestring, $time);
+        
+        
         $this->load->vars($data);
         return $data;
     }
@@ -72,6 +81,9 @@ class Welcome extends MY_Controller {
         }
 
         $this->get_content_data($data['menu']);
+        if ($data['menu'] == 'news') {
+        	$data['news'] = $this->content_model->get_content_cat('news');
+        }
 
         $data['captcha'] = $this->captcha_model->initiate_captcha();
 
