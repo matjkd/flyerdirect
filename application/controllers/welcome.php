@@ -8,6 +8,7 @@ class Welcome extends MY_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('captcha_model');
+        $this->load->helper('xml');
     }
 
     public function index() {
@@ -124,6 +125,18 @@ class Welcome extends MY_Controller {
         $data['slideshow'] = 'header/slideshow';
         $this->load->vars($data);
         $this->load->view('template/main');
+    }
+    
+    function feed() {
+    	$data['encoding'] = 'utf-8';
+    	$data['feed_name'] = 'FlyerDirect';
+    	$data['feed_url'] = 'http://www.flyerdirect.co.uk';
+    	$data['page_description'] = 'Flyer Direct';
+    	$data['page_language'] = 'en-ca';
+    	$data['creator_email'] = 'info at flyerdirect dot co dot uk';
+    	$data['posts'] = $this->content_model->list_recent_news();
+    	header("Content-Type: application/rss+xml");
+    	$this->load->view('global/rss', $data);
     }
 
     function login() {

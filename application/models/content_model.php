@@ -161,6 +161,21 @@ class Content_model extends CI_Model {
 			return $query->result();
 		}
 	}
+	function list_recent_news($offset=0) {
+		$data = array();
+		//$this->db->where('page_type', 1);
+		$this->db->where('category', 'news');
+		 
+		$this->db->order_by('date_added', 'DESC');
+		$query = $this->db->get('content', 5, $offset);
+		if ($query->num_rows() > 0) {
+			foreach ($query->result_array() as $row)
+				$data[] = $row;
+		}
+		$query->free_result();
+	
+		return $data;
+	}
 
 	function check_menu_duplicate($menu, $id =0) {
 		$this->db->where('menu', $menu);
