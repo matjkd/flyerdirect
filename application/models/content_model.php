@@ -67,7 +67,7 @@ class Content_model extends CI_Model {
 			$menu_link = str_replace($search, $replace, $subject);
 		}
 		
-		$check_menu = $this->check_menu_duplicate($menu_link);
+		$check_menu = $this->check_menu_duplicate($menu_link, $id);
 		
 		if($check_menu != TRUE) {
 			$menu = $menu_link.$now;
@@ -162,8 +162,9 @@ class Content_model extends CI_Model {
 		}
 	}
 
-	function check_menu_duplicate($menu) {
+	function check_menu_duplicate($menu, $id =0) {
 		$this->db->where('menu', $menu);
+		$this->db->where_not_in('content_id', $id);
 		$query = $this->db->get('content');
 		if ($query->num_rows > 0)
 		{
