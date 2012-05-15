@@ -79,6 +79,7 @@ class Content_model extends CI_Model {
 				'content' => $this->input->post('content'),
 				'menu' => $menu,
 				'title' => $this->input->post('title'),
+				'added_by' => $this->input->post('added_by'),
 				'extra' => $this->input->post('extra'),
 				'meta_desc' => $this->input->post('meta_desc'),
 				'meta_keywords' => $this->input->post('meta_keywords'),

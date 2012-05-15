@@ -31,7 +31,9 @@ if (isset($title)) {
 <?php  $body = str_replace("Flyer Direct", "<strong>FlyerDirect</strong>", "$body");?>
 <?php  $body = str_replace("leaflet distribution", "<strong>leaflet distribution</strong>", "$body");?>
 <?php  $body = str_replace("Leaflet distribution", "<strong>Leaflet distribution</strong>", "$body");?>
-
+<?php if($row->added_by != "") {?>
+<em>By <?= $row->added_by ?></em>
+<?php } ?>
     <?= $body ?>
 
 <?php endforeach; ?>
