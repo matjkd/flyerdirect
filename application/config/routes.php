@@ -53,7 +53,22 @@ $route['design'] = '/welcome/home';
 $route['print'] = '/welcome/home';
 $route['links'] = '/welcome/home';
 $route['news'] = '/welcome/home';
+
 $route['404_override'] = '';
+
+//404s
+$route['testimonials'] = 'welcome';
+$route['about-us'] = 'welcome';
+$route['flyer-distribution'] = 'welcome';
+$route['business-to-business'] = 'welcome';
+$route['distribute-flyers'] = 'welcome';
+$route['leaflet-distribution'] = 'welcome';
+$route['flyerdelivery'] = 'welcome';
+$route['prices'] = 'welcome';
+$route['flyer-services'] = 'welcome';
+
+
+
 
 
 /* End of file routes.php */
