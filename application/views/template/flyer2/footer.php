@@ -16,6 +16,17 @@
      <script src="<?=base_url()?>js/datatables.js"></script>
       <script src="<?=base_url()?>js/script.js?20042012"></script>
 
+      
+      <!-- Place this render call where appropriate -->
+<!-- Place this tag in your head or just before your close body tag -->
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
   <!-- end concatenated and minified scripts-->
   
   

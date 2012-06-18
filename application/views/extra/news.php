@@ -13,6 +13,8 @@
 		<div class="newsContent">
 			<h4>
 				<a href="<?=base_url()?>welcome/home/<?=$row->menu?>"><?= $row->title ?></a>
+				
+				
 				<?php
 				$is_logged_in = $this->session->userdata('is_logged_in');
 				if (!isset($is_logged_in) || $is_logged_in == true) {
@@ -29,10 +31,13 @@
 			?>
 			
 			<br/><em>Added <?=$date_added?></em><br/>
+			<!-- Place this tag where you want the +1 button to render -->
+<div class="g-plusone" data-annotation="inline" data-href="<?=base_url()?>/welcome/home/<?=$row->menu?>"></div>
 			<?= $row->content ?>
 			
 			
 		</div>
+		
 		<div style="clear: both"></div>
 	</div>
 	<?php endforeach;
