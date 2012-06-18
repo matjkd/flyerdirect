@@ -33,11 +33,12 @@ if (isset($title)) {
 <?php  $body = str_replace("Leaflet distribution", "<strong>Leaflet distribution</strong>", "$body");?>
 <?php if($row->added_by != "") {?>
 <em>By <?= $row->added_by ?></em><br/>
+
+<?php } ?>
+<?php if($row->menu != "news") {?>
 <!-- Place this tag where you want the +1 button to render -->
 <div class="g-plusone" data-annotation="inline" data-href="<?=base_url()?>/welcome/home/<?=$row->menu?>"></div>
-<?php } ?>
-
-	
+	<?php } ?>
     <?= $body ?>
 
 <?php endforeach; ?>
