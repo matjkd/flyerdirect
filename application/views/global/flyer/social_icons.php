@@ -1,4 +1,7 @@
 <div class="socialicons">
+<!-- Place this tag where you want the badge to render -->
+<a href="https://plus.google.com/102283936907984776350?prsrc=3" rel="publisher" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="" style="border:0;width:32px;height:32px;"/></a>
+
 <a href="http://en-gb.facebook.com/pages/Flyerdirect/157935370932768?sk=wall"/><img src="<?=base_url()?>images/icons/facebook_32.png" /></a>
 
 

@@ -130,10 +130,10 @@
                     <?= $this->load->view('global/flyer/seo_menu') ?>
                 </div>
 
-                <div class="thirteen columns">
+                <div class="twelve columns">
                     <?= $this->load->view('global/flyer2/footer_menu') ?>
                 </div>
-                <div class="three columns">
+                <div class="four columns">
                     <?= $this->load->view('global/flyer/social_icons') ?>
 
                 </div>

@@ -80,6 +80,9 @@ class Welcome extends MY_Controller {
         } else {
             $data['menu'] = $this->uri->segment(1);
         }
+        if( $data['menu'] == "welcome") {
+        	$data['menu'] = "home";
+        }
 
         $this->get_content_data($data['menu']);
         if ($data['menu'] == 'news') {
