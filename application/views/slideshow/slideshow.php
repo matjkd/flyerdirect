@@ -24,12 +24,13 @@
                     &nbsp;
                     <span>  Professional Campaign Planning and Leaflet Distribution from Flyer Direct </span>
 
+                     <span> Shared leaflet distribution from £35.00 per thousand<br/>
+                         <a href="<?= base_url() ?>welcome/home/special-offer">Click here for more info</a> </span>
 
 
                     <span> Take advantage of the 2012 Olympics in London.<br/> <a href="<?= base_url() ?>welcome/home/2012">Click here for more info</a> </span>
                     
-                     <span>  For a limited time, get 5000 leaflets designed, printed and distributed for just £399.<br/>
-                         <a href="<?= base_url() ?>welcome/home/special-offer">Click here for more info</a> </span>
+                    
                 </div>
             </div>
 
