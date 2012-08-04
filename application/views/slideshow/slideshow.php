@@ -4,8 +4,9 @@
         <div class="six  columns"  id="headerimage">
             <div class="slideshow-0">
                 <img  src="<?= base_url() ?>images/slides/manonmap.jpg"/>
-                <img src="<?= base_url() ?>images/slides/london2012.jpg"/>
+               
                  <img src="<?= base_url() ?>images/slides/design.jpg"/>
+                  <img src="<?= base_url() ?>images/slides/london2012.jpg"/>
             </div>
         </div>
 
@@ -15,8 +16,9 @@
         <div class="ten columns " id="headertext"> 
             <div class="slideshow-1" >
                 <img src="<?= base_url() ?>images/slides/slide1Title.png"/>
+                 <img src="<?= base_url() ?>images/slides/slideSpecialOffer.png"/>
                 <img src="<?= base_url() ?>images/slides/slide2Title.png"/>
-                <img src="<?= base_url() ?>images/slides/slideSpecialOffer.png"/>
+               
             </div>
             <div class="six columns omega">
 
