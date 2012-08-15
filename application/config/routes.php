@@ -53,7 +53,10 @@ $route['design'] = '/welcome/home';
 $route['print'] = '/welcome/home';
 $route['links'] = '/welcome/home';
 $route['news'] = '/welcome/home';
-
+$route['seo'] = '/welcome/home';
+$route['basicseo'] = '/welcome/home';
+$route['premiumseo'] = '/welcome/home';
+$route['social-media-optimisation'] = '/welcome/home';
 $route['404_override'] = '';
 
 //404s
