@@ -16,11 +16,7 @@
     
 } ?>">
 
-<meta name="keywords" content="<?php if (isset($meta_keywords) && $meta_keywords != NULL) {
-    echo $meta_keywords;
-} else {
-    
-} ?>">
+
 <meta name="author" content="Redstudio Design Limited">
 
 <!-- Mobile Specific Metas

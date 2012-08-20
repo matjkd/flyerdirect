@@ -34,7 +34,7 @@ class Content_model extends CI_Model {
 		$this->db->where('category', 'seo');
 		$query = $this->db->get('content');
 		if ($query->num_rows > 0)
-			; {
+			 {
 			return $query->result();
 		}
 	}
@@ -44,7 +44,7 @@ class Content_model extends CI_Model {
 		$this->db->where('content_id', $id);
 		$query = $this->db->get('content');
 		if ($query->num_rows == 1)
-			; {
+			 {
 			return $query->result();
 		}
 	}
