@@ -32,8 +32,12 @@
 		<div class="seodesc">
 			<h3>Basic S.E.O. package</h3>
 			<p>
+			<strong>£39.99 for 2 Months</strong>
+			
+			</p>
+			<p>
 			Optimisation of local keywords for search engines                        
-from £79.99 per month
+from £79.99 per month.<br/> Setup fee of £79.99.
 			</p>
 			<a href="basicseo">Read about our Basic SEO package</a>
 		</div>
@@ -50,8 +54,12 @@ from £79.99 per month
 	<div class="eight columns alpha omega " id="SEO">
 		<div class="seodesc">
 			<h3>Premium  S.E.O. package</h3>
+			<p>
+			<strong>£39.99 for 2 Months</strong>
+			
+			</p>
 			<p>Optimisation of national keywords for search engines                        
-from £120.00 per month</p>
+from £120.00 per month.<br/> Setup fee of £79.99.</p>
 			<a href="premiumseo">Read about our Premium SEO Package</a>
 		</div>
 	</div>
