@@ -17,6 +17,7 @@
 <ul style="float: right;" id="maintopMenu">
 	<li><?= anchor('/', 'home') ?></li>
 	<li><?= anchor('/services', 'services') ?></li>
+		<li><?= anchor('/seo', 'SEO') ?></li>
 	<li><?= anchor('/about', 'about us') ?></li>
 	<li><?= anchor('/news', 'news') ?></li>
 	<li><?= anchor('/social', 'charity') ?></li>
@@ -42,6 +43,7 @@
 			OnChange="location.href=jump1.myjumpbox.options[selectedIndex].value">
 			<option value="<?=base_url()?>" selected>Home</option>
 			<option value="<?=base_url()?>services">Services</option>
+			<option value="<?=base_url()?>seo">SEO</option>
 			<option value="<?=base_url()?>about">About Us</option>
 			<option value="<?=base_url()?>social">Charity</option>
 			<option value="<?=base_url()?>jobs">Jobs</option>

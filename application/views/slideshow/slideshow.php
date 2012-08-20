@@ -6,7 +6,7 @@
                 <img  src="<?= base_url() ?>images/slides/manonmap.jpg"/>
                
                  <img src="<?= base_url() ?>images/slides/design.jpg"/>
-                  <img src="<?= base_url() ?>images/slides/london2012.jpg"/>
+                  <img src="<?= base_url() ?>images/slides/seo.jpg"/>
             </div>
         </div>
 
@@ -17,7 +17,7 @@
             <div class="slideshow-1" >
                 <img src="<?= base_url() ?>images/slides/slide1Title.png"/>
                  <img src="<?= base_url() ?>images/slides/slideSpecialOffer.png"/>
-                <img src="<?= base_url() ?>images/slides/slide2Title.png"/>
+                <img src="<?= base_url() ?>images/slides/seotitle.png"/>
                
             </div>
             <div class="six columns omega">
@@ -30,7 +30,7 @@
                          <a href="<?= base_url() ?>welcome/home/special-offer">Click here for more info</a> </span>
 
 
-                    <span> Take advantage of the 2012 Olympics in London.<br/> <a href="<?= base_url() ?>welcome/home/2012">Click here for more info</a> </span>
+                    <span> Take advantage of our Search Engine Optimisation packages.<br/> <a href="<?= base_url() ?>seo">Click here for more info</a> </span>
                     
                     
                 </div>
