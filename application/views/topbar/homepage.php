@@ -22,7 +22,7 @@
             <img src="<?= base_url() ?>images/icons/icons/map.png"/>
         </div>
         <div class="blue_text">
-            <a href="<?=base_url()?>welcome/home/Leaflet_distribution_with_Geoplan"><h4>We use Geoplan</h4></a>
+            <a href="<?=base_url()?>welcome/home/Leaflet_distribution_with_letterbox_check"><h4>Letterbox Check</h4></a>
         </div>
         <div style="clear:both;">
             Allowing you to track your campaign
