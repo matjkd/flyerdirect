@@ -4,7 +4,7 @@
 			<img src="<?= base_url() ?>images/icons/icons/radar.png" />
 		</div>
 		<div style="float: left; padding-top: 7px; padding-left: 10px;">
-			<a target="_blank" href="http://mytrackpanel.com/trackit247/">tracker</a>
+			<a target="_blank" href="https://n2.letterboxcheck.com/5613">tracker</a>
 		</div>
 		<div style="float: left; height: 33px;">
 			<img height="33px" src="<?= base_url() ?>images/icons/nav-arrow.png" />
