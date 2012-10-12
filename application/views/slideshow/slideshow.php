@@ -7,6 +7,7 @@
                
                  <img src="<?= base_url() ?>images/slides/design.jpg"/>
                   <img src="<?= base_url() ?>images/slides/seo.jpg"/>
+                  <img src="<?= base_url() ?>images/slides/streetpromoting.jpg"/>
             </div>
         </div>
 
@@ -18,6 +19,7 @@
                 <img src="<?= base_url() ?>images/slides/slide1Title.png"/>
                  <img src="<?= base_url() ?>images/slides/slideSpecialOffer.png"/>
                 <img src="<?= base_url() ?>images/slides/seotitle.png"/>
+                 <img src="<?= base_url() ?>images/slides/streettitle.png"/>
                
             </div>
             <div class="six columns omega">
@@ -32,7 +34,7 @@
 
                     <span> Take advantage of our Search Engine Optimisation packages.<br/> <a href="<?= base_url() ?>seo">Click here for more info</a> </span>
                     
-                    
+                      <span> Utilise our street promoting team.<br/> <a href="<?= base_url() ?>welcome/home/street_promotions">Click here for more info</a> </span>
                 </div>
             </div>
 

@@ -101,6 +101,8 @@
                 <?php
                 if (isset($sidebox) && $sidebox != NULL) {
                     $this->load->view($sidebox);
+                } else {
+                	 $this->load->view('sidebox/flyer/mainsidebox');
                 }
                 ?>
             </div>
