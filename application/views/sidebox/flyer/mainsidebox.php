@@ -1,25 +1,6 @@
+
+
 <div class="four columns alpha ">
-
-    <img src="<?= base_url() ?>images/template/flyerdirect/sidebox/girl2.png" height="235px"/>
-    <div class="bluebox">
-
-        <div id="bluebox_content">
-            <div class="blue_logo">
-                <img src="<?= base_url() ?>images/icons/icons/map.png"/>
-            </div>
-            <div class="blue_text">
-                <a href="<?= base_url() ?>welcome/home/street_promotions"> <h4>Street Promoting</h4></a>
-            </div>
-            <div style="clear:both;">
-                Utilise our street promoting team
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="four columns omega ">
     <div class="bluebox dark">
 
         <div id="bluebox_content">
@@ -67,4 +48,17 @@
         </div>
 
     </div>
+     <div class="bluebox dark">
+     <div id="bluebox_content">
+            <div class="blue_logo">
+                <img src="<?= base_url() ?>images/icons/icons/map.png"/>
+            </div>
+            <div class="blue_text">
+                <a href="<?= base_url() ?>welcome/home/street_promotions"> <h4>Street Promoting</h4></a>
+            </div>
+            <div style="clear:both;">
+                Utilise our street promoting team
+            </div>
+        </div>
+       </div>
 </div>
